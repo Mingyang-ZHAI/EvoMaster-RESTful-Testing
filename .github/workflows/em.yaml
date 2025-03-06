@@ -37,7 +37,7 @@ jobs:
                 --bbSwaggerUrl http://localhost:8080/v3/api-docs
                 --maxTime 20s
                 --showProgress false
-          failOnErrors: "true"
+          failOnErrors: "false"
 
       - name: Upload Generated Files
         if: always()

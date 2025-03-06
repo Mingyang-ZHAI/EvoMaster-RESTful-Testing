@@ -45,18 +45,6 @@ public class EMDriver extends EmbeddedSutController {
         return null;
     }
 
-//    @Override
-//    public Connection getConnection() {
-//        return connection;
-//    }
-//
-//
-//    @Override
-//    public String getDatabaseDriverName() {
-//        return "org.h2.Driver";
-//    }
-
-
     public ProblemInfo getProblemInfo() {
         return new RestProblem("http://localhost:8080/v3/api-docs", null);
     }
