@@ -9,6 +9,7 @@ public class Application {
     public static void main(String[] args){
         /*
             Start application. Schema accessible at:
+            http://localhost:8080/swagger-ui/index.html
             http://localhost:8080/v3/api-docs
          */
         SpringApplication.run(Application.class);

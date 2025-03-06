@@ -6,6 +6,7 @@ import org.evomaster.client.java.controller.api.dto.auth.AuthenticationDto;
 import org.evomaster.client.java.controller.api.dto.SutInfoDto;
 import org.evomaster.client.java.controller.api.dto.database.schema.DatabaseType;
 import org.evomaster.client.java.controller.internal.SutController;
+import org.evomaster.client.java.sql.DbCleaner;
 import org.evomaster.client.java.sql.DbSpecification;
 import org.evomaster.client.java.controller.problem.ProblemInfo;
 import org.evomaster.client.java.controller.problem.RestProblem;
@@ -44,6 +45,17 @@ public class EMDriver extends EmbeddedSutController {
         return null;
     }
 
+//    @Override
+//    public Connection getConnection() {
+//        return connection;
+//    }
+//
+//
+//    @Override
+//    public String getDatabaseDriverName() {
+//        return "org.h2.Driver";
+//    }
+
 
     public ProblemInfo getProblemInfo() {
         return new RestProblem("http://localhost:8080/v3/api-docs", null);
@@ -73,6 +85,7 @@ public class EMDriver extends EmbeddedSutController {
     }
 
     public void resetStateOfSUT() {
+        DbCleaner.clearDatabase_H2(sqlConnection);
     }
 
     @Override
