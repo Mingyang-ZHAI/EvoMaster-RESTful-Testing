@@ -28,14 +28,7 @@ java -jar evomaster.jar --maxTime 30s --outputFolder src/test/java/whitebox_test
 java -jar evomaster.jar --maxTime 1h --prematureStop 10m --outputFolder src/test/java/whitebox_tests
 ```
 
-How to start a black box testing:
-
-```declarative
-cd Graphql-example
-
-java -jar ../rest-api-example/evomaster.jar  --problemType GRAPHQL --bbTargetUrl http://localhost:4000/graphql --blackBox true --maxTime 30s --ratePerMinute 60 --outputFormat JAVA_JUNIT_4 --outputFolder src/test/java/blackbox_tests
-```
-
+---
 ## **Running Black-Box Testing**
 
 ### **Prerequisites**
@@ -45,15 +38,11 @@ Before running Black-Box testing, ensure the following:
 - The API supports **REST, GraphQL, or RPC**.
 - You have the **correct API URL** for testing.
 
----
+
 
 ### **How to Run Black-Box Testing**
-1. **Navigate to the target API directory**
-   ```sh
-   cd Graphql-example
-    ```
-2. Run EvoMaster with Black-Box mode enabled
+1. Run EvoMaster with Black-Box mode enabled
     ```sh
-    java -jar ../rest-api-example/evomaster.jar  --problemType GRAPHQL --bbTargetUrl http://localhost:4000/graphql --blackBox true --maxTime 30s --ratePerMinute 60 --outputFormat JAVA_JUNIT_4 --outputFolder src/test/java/blackbox_tests
+    java -jar evomaster.jar  --bbSwaggerUrl http://localhost:8080/v3/api-docs --blackBox true --maxTime 30s --ratePerMinute 60 --outputFormat JAVA_JUNIT_4 --outputFolder src/test/java/blackbox_tests
     ```
 
